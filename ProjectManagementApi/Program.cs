@@ -1,5 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using ProjectManagementApi.Data;
+using ProjectManagementApi.IRepositories;
+using ProjectManagementApi.IServices;
+using ProjectManagementApi.Repositories;
+using ProjectManagementApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,6 +29,21 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
+// Repositories
+builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
+builder.Services.AddScoped<ITasksRepository, TasksRepository>(); // Ensure this line exists
+
+// Services
+builder.Services.AddScoped<IProjectService, ProjectService>();
+builder.Services.AddScoped<ITaskssService, TaskssService>(); // Ensure this line exists
+
+// Other configurations...
+builder.Services.AddControllers();
+
+builder.Services.AddControllers(); // Add this line if you're using MVC
+
 
 var app = builder.Build();
 

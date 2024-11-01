@@ -1,8 +1,8 @@
 ﻿using ProjectManagementApi.Model;
 
-namespace ProjectManagementApi.IRepositories
+namespace ProjectManagementApi.IServices
 {
-    public interface ITaskRepository
+    public interface ITaskssService
     {
         Task<IEnumerable<Tasks>> GetAllTasksAsync();
         Task<Tasks> GetTaskByIdAsync(int id);

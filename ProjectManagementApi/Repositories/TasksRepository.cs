@@ -6,7 +6,7 @@ using ProjectManagementApi.Model;
 
 namespace ProjectManagementApi.Repositories
 {
-    public class TasksRepository : ITaskRepository
+    public class TasksRepository : ITasksRepository
     {
         private readonly ApplicationDbContext _context;
 
