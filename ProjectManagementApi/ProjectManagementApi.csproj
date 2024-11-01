@@ -37,9 +37,7 @@
 
   <ItemGroup>
     <Folder Include="DTO\" />
-    <Folder Include="IRepositories\" />
     <Folder Include="IServices\" />
-    <Folder Include="Repositories\" />
     <Folder Include="Services\" />
   </ItemGroup>
 

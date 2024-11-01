@@ -16,6 +16,7 @@ namespace ProjectManagementApi.Data
         //public DbSet<Tasks> Tasks { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
+        public DbSet<Tasks> Tasks { get; set; }
         public DbSet<TasksStatus> TaskStatuses { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
