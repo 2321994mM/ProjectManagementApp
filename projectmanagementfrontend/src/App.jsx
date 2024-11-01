@@ -3,8 +3,8 @@ import SimpleApiCall from './components/SimpleApiCall';
 
 function App() {
     return (
-        <div>
-            <h1>Welcome to the Project Management App</h1>
+            <div className="app-container">
+
             <SimpleApiCall />
         </div>
     );
