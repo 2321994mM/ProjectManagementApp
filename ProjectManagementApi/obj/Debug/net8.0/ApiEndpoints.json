@@ -1,0 +1,22 @@
+[
+  {
+    "ContainingType": "ProjectManagementApi.Controllers.SimpleController",
+    "Method": "GetProjects",
+    "RelativePath": "api/Simple/projects",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProjectManagementApi.Controllers.SimpleController",
+    "Method": "GetTasks",
+    "RelativePath": "api/Simple/tasks",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
