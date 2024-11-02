@@ -214,24 +214,24 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Here are some screenshots of the application:
 
-1. **Manager Page**
-   ![Manager Page](https://github.com/user-attachments/assets/93717c7e-1ee9-48cd-a3f4-1d55372b37fa)
+1-![image](https://github.com/user-attachments/assets/a3b85c46-9745-448c-b836-9f7a9ee2fa35)
+2- **manager page**
+![image](https://github.com/user-attachments/assets/93717c7e-1ee9-48cd-a3f4-1d55372b37fa)
+3- **employee page**
+![image](https://github.com/user-attachments/assets/e807ef5c-799d-4acf-bc6f-feac295114f3)
+4- **Prject**
+![image](https://github.com/user-attachments/assets/7119919b-5ce3-4089-95c4-11a8e14203ed)
+![image](https://github.com/user-attachments/assets/1539228b-9136-4f98-b04d-b0aca68c5165)
 
-2. **Employee Page**
-   ![Employee Page](https://github.com/user-attachments/assets/e807ef5c-799d-4acf-bc6f-feac295114f3)
+![image](https://github.com/user-attachments/assets/a45c123f-fb83-4073-a99a-f4fa7549fa95)
 
-3. **Project Overview**
-   ![Project Overview](https://github.com/user-attachments/assets/7119919b-5ce3-4089-95c4-11a8e14203ed)
+5- **tasks**
+![image](https://github.com/user-attachments/assets/eafd7327-7493-4615-ad3e-30144d799ecc)
 
-4. **Tasks Management**
-   ![Tasks Management 1](https://github.com/user-attachments/assets/eafd7327-7493-4615-ad3e-30144d799ecc)
-   ![Tasks Management 2](https://github.com/user-attachments/assets/02a730a6-91a1-449a-96fe-28342a292b86)
-   ![Tasks Management 3](https://github.com/user-attachments/assets/4489a3ed-37e3-4ca4-b7fe-e33061af9165)
+![image](https://github.com/user-attachments/assets/02a730a6-91a1-449a-96fe-28342a292b86)
 
-5. **Project Management**
-   ![Project Management](https://github.com/user-attachments/assets/a3b85c46-9745-448c-b836-9f7a9ee2fa35)
-
-6. **Swagger API**
-   ![Swagger API](https://github.com/user-attachments/assets/b220cf42-6329-40b2-882b-da41387ecf66)
+![image](https://github.com/user-attachments/assets/4489a3ed-37e3-4ca4-b7fe-e33061af9165)
+6- **swaggar api**
+![image](https://github.com/user-attachments/assets/b220cf42-6329-40b2-882b-da41387ecf66)
 
 Feel free to replace any placeholder text or links with your actual project details!
