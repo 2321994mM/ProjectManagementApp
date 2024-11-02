@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "ProjectManagementApi.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ProjectManagementApi.DTO.UserDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ProjectManagementApi.Controllers.ProjectsController",
     "Method": "GetAllProjects",
     "RelativePath": "api/Projects",

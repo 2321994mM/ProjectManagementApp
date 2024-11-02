@@ -39,7 +39,8 @@ builder.Services.AddScoped<ITasksRepository, TasksRepository>(); // Ensure this 
 // Services
 builder.Services.AddScoped<IProjectService, ProjectService>();
 builder.Services.AddScoped<ITaskssService, TaskssService>(); // Ensure this line exists
-
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 // Other configurations...
 builder.Services.AddAutoMapper(typeof(UserProfile)); // You can specify your profile type
 

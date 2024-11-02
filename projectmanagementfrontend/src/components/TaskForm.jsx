@@ -1,55 +1,62 @@
 // src/components/TaskForm.js
 import React, { useState, useEffect } from 'react';
-import { createTask, updateTask } from './taskService';
 import { Button, Modal, Form } from 'react-bootstrap';
 
-const TaskForm = ({ show, handleClose, taskToEdit, loadTasks }) => {
+const TaskForm = ({ show, handleClose, handleSubmit, currentTask }) => {
     const [taskName, setTaskName] = useState('');
     const [description, setDescription] = useState('');
+    const [assignedToId, setAssignedToId] = useState('');
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
     const [priority, setPriority] = useState('');
+    const [tasksStatusId, setTasksStatusId] = useState('');
+    const [projectId, setProjectId] = useState('');
 
     useEffect(() => {
-        if (taskToEdit) {
-            setTaskName(taskToEdit.tasksName);
-            setDescription(taskToEdit.description);
-            setStartDate(taskToEdit.startDate);
-            setEndDate(taskToEdit.endDate);
-            setPriority(taskToEdit.priority);
+        if (currentTask) {
+            setTaskName(currentTask.tasksName);
+            setDescription(currentTask.description);
+            setAssignedToId(currentTask.assignedToId || '');
+            setStartDate(currentTask.startDate ? currentTask.startDate.split('T')[0] : '');
+            setEndDate(currentTask.endDate ? currentTask.endDate.split('T')[0] : '');
+            setPriority(currentTask.priority || '');
+            setTasksStatusId(currentTask.tasksStatusId || '');
+            setProjectId(currentTask.projectId || '');
         } else {
             setTaskName('');
             setDescription('');
+            setAssignedToId('');
             setStartDate('');
             setEndDate('');
             setPriority('');
+            setTasksStatusId('');
+            setProjectId('');
         }
-    }, [taskToEdit]);
+    }, [currentTask]);
 
-    const handleSubmit = async (e) => {
+    const onSubmit = (e) => {
         e.preventDefault();
-        const taskData = { tasksName: taskName, description, startDate, endDate, priority };
-        try {
-            if (taskToEdit) {
-                await updateTask(taskToEdit.tasksId, taskData);
-            } else {
-                await createTask(taskData);
-            }
-            loadTasks(); // Reload tasks after create/update
-            handleClose();
-        } catch (error) {
-            console.error('Failed to save task:', error);
-        }
+        handleSubmit({
+            tasksName: taskName,
+            description,
+            assignedToId: assignedToId ? parseInt(assignedToId) : null,
+            startDate,
+            endDate: endDate ? new Date(endDate) : null,
+            priority,
+            tasksStatusId: tasksStatusId ? parseInt(tasksStatusId) : null,
+            projectId: projectId ? parseInt(projectId) : null,
+        });
+        handleClose();
     };
 
     return (
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
-                <Modal.Title>{taskToEdit ? 'Edit Task' : 'Create Task'}</Modal.Title>
+                <Modal.Title>{currentTask ? 'Edit Task' : 'Add New Task'}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <Form onSubmit={handleSubmit}>
-                    <Form.Group controlId="taskName">
+                <Form onSubmit={onSubmit}>
+                    <Form.Group controlId="formTaskName">
                         <Form.Label>Task Name</Form.Label>
                         <Form.Control
                             type="text"
@@ -58,16 +65,25 @@ const TaskForm = ({ show, handleClose, taskToEdit, loadTasks }) => {
                             required
                         />
                     </Form.Group>
-                    <Form.Group controlId="description">
+                    <Form.Group controlId="formDescription">
                         <Form.Label>Description</Form.Label>
                         <Form.Control
-                            type="text"
+                            as="textarea"
+                            rows={3}
                             value={description}
                             onChange={(e) => setDescription(e.target.value)}
                             required
                         />
                     </Form.Group>
-                    <Form.Group controlId="startDate">
+                    <Form.Group controlId="formAssignedToId">
+                        <Form.Label>Assigned To (User ID)</Form.Label>
+                        <Form.Control
+                            type="number"
+                            value={assignedToId}
+                            onChange={(e) => setAssignedToId(e.target.value)}
+                        />
+                    </Form.Group>
+                    <Form.Group controlId="formStartDate">
                         <Form.Label>Start Date</Form.Label>
                         <Form.Control
                             type="date"
@@ -76,7 +92,7 @@ const TaskForm = ({ show, handleClose, taskToEdit, loadTasks }) => {
                             required
                         />
                     </Form.Group>
-                    <Form.Group controlId="endDate">
+                    <Form.Group controlId="formEndDate">
                         <Form.Label>End Date</Form.Label>
                         <Form.Control
                             type="date"
@@ -84,17 +100,34 @@ const TaskForm = ({ show, handleClose, taskToEdit, loadTasks }) => {
                             onChange={(e) => setEndDate(e.target.value)}
                         />
                     </Form.Group>
-                    <Form.Group controlId="priority">
+                    <Form.Group controlId="formPriority">
                         <Form.Label>Priority</Form.Label>
                         <Form.Control
                             type="text"
                             value={priority}
                             onChange={(e) => setPriority(e.target.value)}
+                        />
+                    </Form.Group>
+                    <Form.Group controlId="formTasksStatusId">
+                        <Form.Label>Status ID</Form.Label>
+                        <Form.Control
+                            type="number"
+                            value={tasksStatusId}
+                            onChange={(e) => setTasksStatusId(e.target.value)}
+                            required
+                        />
+                    </Form.Group>
+                    <Form.Group controlId="formProjectId">
+                        <Form.Label>Project ID</Form.Label>
+                        <Form.Control
+                            type="number"
+                            value={projectId}
+                            onChange={(e) => setProjectId(e.target.value)}
                             required
                         />
                     </Form.Group>
                     <Button variant="primary" type="submit">
-                        {taskToEdit ? 'Update Task' : 'Create Task'}
+                        {currentTask ? 'Update Task' : 'Add Task'}
                     </Button>
                 </Form>
             </Modal.Body>

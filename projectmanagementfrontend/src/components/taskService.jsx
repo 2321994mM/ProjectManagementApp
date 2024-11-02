@@ -1,39 +1,24 @@
 // src/services/taskService.js
+import axios from 'axios';
+
 const API_URL = 'https://localhost:7137/api/tasks';
 
 export const getTasks = async () => {
-    const response = await fetch(API_URL);
-    if (!response.ok) throw new Error('Network response was not ok');
-    return response.json();
+    const response = await axios.get(API_URL);
+    return response.data;
 };
 
-export const createTask = async (task) => {
-    const response = await fetch(API_URL, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(task),
-    });
-    if (!response.ok) throw new Error('Failed to create task');
-    return response.json();
+export const addTask = async (task) => {
+    const response = await axios.post(API_URL, task);
+    return response.data;
 };
 
-export const updateTask = async (taskId, task) => {
-    const response = await fetch(`${API_URL}/${taskId}`, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(task),
-    });
-    if (!response.ok) throw new Error('Failed to update task');
-    return response.json();
+export const updateTask = async (task) => {
+    const response = await axios.put(`${API_URL}/${task.tasksId}`, task);
+    return response.data;
 };
 
 export const deleteTask = async (taskId) => {
-    const response = await fetch(`${API_URL}/${taskId}`, {
-        method: 'DELETE',
-    });
-    if (!response.ok) throw new Error('Failed to delete task');
+    await axios.delete(`${API_URL}/${taskId}`);
 };
+
