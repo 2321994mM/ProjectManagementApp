@@ -196,6 +196,10 @@ The application includes seed data for the `TaskStatus` and `UserRole` tables. T
 
 This allows for quick testing of the application’s features.
 
+## Usage
+
+After starting both the backend and frontend, you can access the application in your web browser at `http://localhost:3000`. You can log in using the pre-defined user credentials mentioned above.
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a pull request or open an issue for any improvements or bug fixes.
@@ -204,20 +208,25 @@ Contributions are welcome! Please feel free to submit a pull request or open an 
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+---
 
+## Screenshots
 
+Here are some screenshots of the application:
 
+1. **Manager Page**
+   ![Manager Page](https://github.com/user-attachments/assets/93717c7e-1ee9-48cd-a3f4-1d55372b37fa)
 
+2. **Employee Page**
+   ![Employee Page](https://github.com/user-attachments/assets/e807ef5c-799d-4acf-bc6f-feac295114f3)
 
+3. **Project Overview**
+   ![Project Overview](https://github.com/user-attachments/assets/7119919b-5ce3-4089-95c4-11a8e14203ed)
 
-1-![image](https://github.com/user-attachments/assets/a3b85c46-9745-448c-b836-9f7a9ee2fa35)
-2- manager page
-![image](https://github.com/user-attachments/assets/93717c7e-1ee9-48cd-a3f4-1d55372b37fa)
-3- employee page
-![image](https://github.com/user-attachments/assets/e807ef5c-799d-4acf-bc6f-feac295114f3)
-4- Prject
-![image](https://github.com/user-attachments/assets/7119919b-5ce3-4089-95c4-11a8e14203ed)
-![image](https://github.com/user-attachments/assets/1539228b-9136-4f98-b04d-b0aca68c5165)
+4. **Tasks Management**
+   ![Tasks Management](https://github.com/user-attachments/assets/eafd7327-7493-4615-ad3e-30144d799ecc)
 
-![image](https://github.com/user-attachments/assets/a45c123f-fb83-4073-a99a-f4fa7549fa95)
+5. **Swagger API**
+   ![Swagger API](https://github.com/user-attachments/assets/b220cf42-6329-40b2-882b-da41387ecf66)
 
+Feel free to replace any of the placeholder text or links with your actual project details!
