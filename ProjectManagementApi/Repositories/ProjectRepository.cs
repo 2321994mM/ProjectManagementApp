@@ -22,9 +22,18 @@ namespace ProjectManagementApi.Repositories
 
         public async Task<Project> CreateProjectAsync(Project project)
         {
-            _context.Projects.Add(project);
-            await _context.SaveChangesAsync();
-            return project;
+            try
+            {
+                _context.Projects.Add(project);
+                await _context.SaveChangesAsync();
+                return project;
+
+            }
+            catch (Exception ex) {
+
+                return new Project();
+            }
+           
         }
 
         public async Task<Project> UpdateProjectAsync(Project project)

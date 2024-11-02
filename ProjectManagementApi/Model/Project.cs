@@ -1,4 +1,6 @@
-﻿namespace ProjectManagementApi.Model
+﻿using System.Text.Json.Serialization;
+
+namespace ProjectManagementApi.Model
 {
     public class Project
     {
@@ -11,7 +13,10 @@
         public int OwnerId { get; set; }
         public string Status { get; set; } // Consider using an enum
 
+        [JsonIgnore]
         public virtual User Owner { get; set; }
+        [JsonIgnore]
+
         public virtual ICollection<Tasks> Tasks { get; set; }
     }
 }

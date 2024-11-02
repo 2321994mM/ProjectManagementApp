@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
+using ProjectManagementApi.DTO;
 using ProjectManagementApi.IServices;
 using ProjectManagementApi.Model;
 
@@ -9,6 +11,7 @@ namespace ProjectManagementApi.Controllers
     public class ProjectsController : ControllerBase
     {
         private readonly IProjectService _projectService;
+        private readonly IMapper _mapper;
 
         public ProjectsController(IProjectService projectService)
         {
@@ -31,15 +34,37 @@ namespace ProjectManagementApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateProject(Project project)
+        public async Task<IActionResult> CreateProject(ProjectDTO projectDto)
         {
+
+            var project = new Project {
+                ProjectName=projectDto.ProjectName,
+                Description=projectDto.Description,
+                Budget=projectDto.Budget,
+                EndDate=projectDto.EndDate,
+                OwnerId= projectDto.OwnerId,
+                StartDate=projectDto.StartDate,
+                Status=projectDto.Status,
+                
+            };
             var createdProject = await _projectService.CreateProjectAsync(project);
             return CreatedAtAction(nameof(GetProjectById), new { id = createdProject.ProjectId }, createdProject);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateProject(int id, Project project)
+        public async Task<IActionResult> UpdateProject(int id, ProjectDTO projectDto)
         {
+            var project = new Project
+            {
+                ProjectName = projectDto.ProjectName,
+                Description = projectDto.Description,
+                Budget = projectDto.Budget,
+                EndDate = projectDto.EndDate,
+                OwnerId = projectDto.OwnerId,
+                StartDate = projectDto.StartDate,
+                Status = projectDto.Status,
+
+            };
             if (id != project.ProjectId) return BadRequest();
             await _projectService.UpdateProjectAsync(project);
             return NoContent();

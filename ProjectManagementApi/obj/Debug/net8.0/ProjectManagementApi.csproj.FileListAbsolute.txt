@@ -141,3 +141,5 @@ C:\Users\Nabila\source\repos\ProjectManagementApp\ProjectManagementApi\obj\Debug
 C:\Users\Nabila\source\repos\ProjectManagementApp\ProjectManagementApi\obj\Debug\net8.0\ProjectManagementApi.pdb
 C:\Users\Nabila\source\repos\ProjectManagementApp\ProjectManagementApi\obj\Debug\net8.0\ProjectManagementApi.genruntimeconfig.cache
 C:\Users\Nabila\source\repos\ProjectManagementApp\ProjectManagementApi\obj\Debug\net8.0\ref\ProjectManagementApi.dll
+C:\Users\Nabila\source\repos\ProjectManagementApp\ProjectManagementApi\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\Nabila\source\repos\ProjectManagementApp\ProjectManagementApi\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

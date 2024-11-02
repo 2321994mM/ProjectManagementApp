@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ProjectManagementApi.DTO;
 using ProjectManagementApi.IServices;
 using ProjectManagementApi.Model;
 
@@ -31,15 +32,41 @@ namespace ProjectManagementApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateTask(Tasks task)
+        public async Task<IActionResult> CreateTask(TasksDTO tasksDTO)
         {
+            var task = new Tasks
+            {
+                TasksName = tasksDTO.TasksName,
+                AssignedToId = tasksDTO.AssignedToId,
+                Description = tasksDTO.Description,
+                EndDate = tasksDTO.EndDate,
+                StartDate = tasksDTO.StartDate,
+                ProjectId = tasksDTO.ProjectId,
+                Priority = tasksDTO.Priority,
+                 TasksStatusId = tasksDTO.TasksStatusId,
+
+
+            };
             var createdTask = await _tasksService.CreateTaskAsync(task);
             return CreatedAtAction(nameof(GetTaskById), new { id = createdTask.TasksId }, createdTask);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateTask(int id, Tasks task)
+        public async Task<IActionResult> UpdateTask(int id, TasksDTO tasksDTO)
         {
+            var task = new Tasks
+            {
+                TasksName = tasksDTO.TasksName,
+                AssignedToId = tasksDTO.AssignedToId,
+                Description = tasksDTO.Description,
+                EndDate = tasksDTO.EndDate,
+                StartDate = tasksDTO.StartDate,
+                ProjectId = tasksDTO.ProjectId,
+                Priority = tasksDTO.Priority,
+                TasksStatusId = tasksDTO.TasksStatusId,
+
+
+            };
             if (id != task.TasksId) return BadRequest();
             await _tasksService.UpdateTaskAsync(task);
             return NoContent();

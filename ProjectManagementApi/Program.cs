@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using ProjectManagementApi.Data;
 using ProjectManagementApi.IRepositories;
 using ProjectManagementApi.IServices;
+using ProjectManagementApi.Mappings;
 using ProjectManagementApi.Repositories;
 using ProjectManagementApi.Services;
 
@@ -40,7 +41,7 @@ builder.Services.AddScoped<IProjectService, ProjectService>();
 builder.Services.AddScoped<ITaskssService, TaskssService>(); // Ensure this line exists
 
 // Other configurations...
-builder.Services.AddControllers();
+builder.Services.AddAutoMapper(typeof(UserProfile)); // You can specify your profile type
 
 builder.Services.AddControllers(); // Add this line if you're using MVC
 
