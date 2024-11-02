@@ -45,19 +45,9 @@ namespace ProjectManagementApi.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateProject(int id, ProjectDTO projectDto)
         {
-            var project = new Project
-            {
-                ProjectName = projectDto.ProjectName,
-                Description = projectDto.Description,
-                Budget = projectDto.Budget,
-                EndDate = projectDto.EndDate,
-                OwnerId = projectDto.OwnerId,
-                StartDate = projectDto.StartDate,
-                Status = projectDto.Status,
 
-            };
-            if (id != project.ProjectId) return BadRequest();
-            await _projectService.UpdateProjectAsync(project);
+            projectDto.ProjectId = id;
+            await _projectService.UpdateProjectAsync(projectDto);
             return NoContent();
         }
 

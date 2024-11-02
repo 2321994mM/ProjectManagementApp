@@ -22,7 +22,7 @@ namespace ProjectManagementApi.Repositories
         public async Task<Tasks> GetTaskByIdAsync(int id) =>
             await _context.Tasks.Include(t => t.Project).FirstOrDefaultAsync(t => t.TasksId == id);
 
-        public async Task<Tasks> CreateTaskAsync(Tasks tasksDTO)
+        public async Task<Tasks> CreateTaskAsync(TasksDTO tasksDTO)
         {
             var task = new Tasks
             {
@@ -46,6 +46,7 @@ namespace ProjectManagementApi.Repositories
         {
             var task = new Tasks
             {
+                TasksId = tasksDTO.TasksId,
                 TasksName = tasksDTO.TasksName,
                 AssignedToId = tasksDTO.AssignedToId,
                 Description = tasksDTO.Description,

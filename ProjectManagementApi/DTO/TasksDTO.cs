@@ -2,6 +2,8 @@
 {
     public class TasksDTO
     {
+        public int TasksId { get; set; }       // Primary Key
+
         public string TasksName { get; set; }
         public string Description { get; set; }
         public int? AssignedToId { get; set; }  // Foreign Key

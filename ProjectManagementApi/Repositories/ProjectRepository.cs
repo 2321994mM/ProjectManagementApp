@@ -52,6 +52,7 @@ namespace ProjectManagementApi.Repositories
         {
             var project = new Project
             {
+                ProjectId = projectDto.ProjectId,
                 ProjectName = projectDto.ProjectName,
                 Description = projectDto.Description,
                 Budget = projectDto.Budget,
