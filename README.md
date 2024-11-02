@@ -7,6 +7,9 @@ A brief description of your project, highlighting its purpose and functionalitie
 - [Overview](#overview)
 - [Technologies](#technologies)
 - [Features](#features)
+- [Folder Structure](#folder-structure)
+  - [Backend Structure](#backend-structure)
+  - [Frontend Structure](#frontend-structure)
 - [Setup](#setup)
   - [Backend Setup](#backend-setup)
   - [Frontend Setup](#frontend-setup)
@@ -39,6 +42,76 @@ This project is a web application built using .NET Core 8 for the backend and Re
 - Code-first approach with Entity Framework Core.
 - Separate projects for backend and frontend.
 - Pre-populated seed data for lookup tables.
+
+## Folder Structure
+
+### Backend Structure
+
+The backend project follows a clean architecture pattern. Here’s an overview of the folder structure:
+
+```
+Backend/
+│
+├── Controllers/
+│   └── <Your Controllers>.cs
+│
+├── DTOs/
+│   └── <Your DTOs>.cs
+│
+├── Models/
+│   └── <Your Models>.cs
+│
+├── Repositories/
+│   ├── I<Your Repository>.cs
+│   └── <Your Repository>.cs
+│
+├── Services/
+│   ├── I<Your Service>.cs
+│   └── <Your Service>.cs
+│
+├── Data/
+│   └── <Your DbContext>.cs
+│
+├── Migrations/
+│   └── <Your Migrations>.cs
+│
+└── Program.cs
+```
+
+- **Controllers/**: Contains API controllers that handle incoming requests.
+- **DTOs/**: Data Transfer Objects for transferring data between layers.
+- **Models/**: Entities that represent your database tables.
+- **Repositories/**: Interfaces and implementations for data access.
+- **Services/**: Business logic and service layer.
+- **Data/**: Contains the DbContext and database configurations.
+- **Migrations/**: Database migrations.
+
+### Frontend Structure
+
+The frontend project is structured as follows:
+
+```
+Frontend/
+│
+├── src/
+│   ├── components/
+│   │   └── <Your React Components>.jsx
+│   │
+│   ├── services/
+│   │   └── <Your API Services>.js
+│   │
+│   ├── App.js
+│   ├── index.js
+│   └── <Other Files>
+│
+└── public/
+    └── index.html
+```
+
+- **components/**: Contains React components for the UI.
+- **services/**: API service files for making HTTP requests.
+- **App.js**: Main application component.
+- **index.js**: Entry point of the React application.
 
 ## Setup
 
@@ -130,3 +203,7 @@ After starting both the backend and frontend, you can access the application in 
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a pull request or open an issue for any improvements or bug fixes.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
