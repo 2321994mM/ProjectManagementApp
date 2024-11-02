@@ -224,9 +224,14 @@ Here are some screenshots of the application:
    ![Project Overview](https://github.com/user-attachments/assets/7119919b-5ce3-4089-95c4-11a8e14203ed)
 
 4. **Tasks Management**
-   ![Tasks Management](https://github.com/user-attachments/assets/eafd7327-7493-4615-ad3e-30144d799ecc)
+   ![Tasks Management 1](https://github.com/user-attachments/assets/eafd7327-7493-4615-ad3e-30144d799ecc)
+   ![Tasks Management 2](https://github.com/user-attachments/assets/02a730a6-91a1-449a-96fe-28342a292b86)
+   ![Tasks Management 3](https://github.com/user-attachments/assets/4489a3ed-37e3-4ca4-b7fe-e33061af9165)
 
-5. **Swagger API**
+5. **Project Management**
+   ![Project Management](https://github.com/user-attachments/assets/a3b85c46-9745-448c-b836-9f7a9ee2fa35)
+
+6. **Swagger API**
    ![Swagger API](https://github.com/user-attachments/assets/b220cf42-6329-40b2-882b-da41387ecf66)
 
-Feel free to replace any of the placeholder text or links with your actual project details!
+Feel free to replace any placeholder text or links with your actual project details!
