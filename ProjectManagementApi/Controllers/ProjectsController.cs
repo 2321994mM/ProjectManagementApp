@@ -37,17 +37,8 @@ namespace ProjectManagementApi.Controllers
         public async Task<IActionResult> CreateProject(ProjectDTO projectDto)
         {
 
-            var project = new Project {
-                ProjectName=projectDto.ProjectName,
-                Description=projectDto.Description,
-                Budget=projectDto.Budget,
-                EndDate=projectDto.EndDate,
-                OwnerId= projectDto.OwnerId,
-                StartDate=projectDto.StartDate,
-                Status=projectDto.Status,
-                
-            };
-            var createdProject = await _projectService.CreateProjectAsync(project);
+           
+            var createdProject = await _projectService.CreateProjectAsync(projectDto);
             return CreatedAtAction(nameof(GetProjectById), new { id = createdProject.ProjectId }, createdProject);
         }
 

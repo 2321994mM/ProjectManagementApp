@@ -34,20 +34,8 @@ namespace ProjectManagementApi.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateTask(TasksDTO tasksDTO)
         {
-            var task = new Tasks
-            {
-                TasksName = tasksDTO.TasksName,
-                AssignedToId = tasksDTO.AssignedToId,
-                Description = tasksDTO.Description,
-                EndDate = tasksDTO.EndDate,
-                StartDate = tasksDTO.StartDate,
-                ProjectId = tasksDTO.ProjectId,
-                Priority = tasksDTO.Priority,
-                 TasksStatusId = tasksDTO.TasksStatusId,
-
-
-            };
-            var createdTask = await _tasksService.CreateTaskAsync(task);
+           
+            var createdTask = await _tasksService.CreateTaskAsync(tasksDTO);
             return CreatedAtAction(nameof(GetTaskById), new { id = createdTask.TasksId }, createdTask);
         }
 

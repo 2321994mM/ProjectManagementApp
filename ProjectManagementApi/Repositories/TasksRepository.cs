@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProjectManagementApi.Data;
+using ProjectManagementApi.DTO;
 using ProjectManagementApi.Enum;
 using ProjectManagementApi.IRepositories;
 using ProjectManagementApi.Model;
@@ -21,15 +22,41 @@ namespace ProjectManagementApi.Repositories
         public async Task<Tasks> GetTaskByIdAsync(int id) =>
             await _context.Tasks.Include(t => t.Project).FirstOrDefaultAsync(t => t.TasksId == id);
 
-        public async Task<Tasks> CreateTaskAsync(Tasks task)
+        public async Task<Tasks> CreateTaskAsync(Tasks tasksDTO)
         {
+            var task = new Tasks
+            {
+                TasksName = tasksDTO.TasksName,
+                AssignedToId = tasksDTO.AssignedToId,
+                Description = tasksDTO.Description,
+                EndDate = tasksDTO.EndDate,
+                StartDate = tasksDTO.StartDate,
+                ProjectId = tasksDTO.ProjectId,
+                Priority = tasksDTO.Priority,
+                TasksStatusId = tasksDTO.TasksStatusId,
+
+
+            };
             _context.Tasks.Add(task);
             await _context.SaveChangesAsync();
             return task;
         }
 
-        public async Task<Tasks> UpdateTaskAsync(Tasks task)
+        public async Task<Tasks> UpdateTaskAsync(TasksDTO tasksDTO)
         {
+            var task = new Tasks
+            {
+                TasksName = tasksDTO.TasksName,
+                AssignedToId = tasksDTO.AssignedToId,
+                Description = tasksDTO.Description,
+                EndDate = tasksDTO.EndDate,
+                StartDate = tasksDTO.StartDate,
+                ProjectId = tasksDTO.ProjectId,
+                Priority = tasksDTO.Priority,
+                TasksStatusId = tasksDTO.TasksStatusId,
+
+
+            };
             _context.Tasks.Update(task);
             await _context.SaveChangesAsync();
             return task;

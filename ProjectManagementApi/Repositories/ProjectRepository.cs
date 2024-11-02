@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProjectManagementApi.Data;
+using ProjectManagementApi.DTO;
 using ProjectManagementApi.IRepositories;
 using ProjectManagementApi.Model;
 
@@ -20,10 +21,21 @@ namespace ProjectManagementApi.Repositories
         public async Task<Project> GetProjectByIdAsync(int id) =>
             await _context.Projects.FindAsync(id);
 
-        public async Task<Project> CreateProjectAsync(Project project)
+        public async Task<Project> CreateProjectAsync(ProjectDTO projectDto)
         {
             try
             {
+                var project = new Project
+                {
+                    ProjectName = projectDto.ProjectName,
+                    Description = projectDto.Description,
+                    Budget = projectDto.Budget,
+                    EndDate = projectDto.EndDate,
+                    OwnerId = projectDto.OwnerId,
+                    StartDate = projectDto.StartDate,
+                    Status = projectDto.Status,
+
+                };
                 _context.Projects.Add(project);
                 await _context.SaveChangesAsync();
                 return project;
@@ -36,8 +48,19 @@ namespace ProjectManagementApi.Repositories
            
         }
 
-        public async Task<Project> UpdateProjectAsync(Project project)
+        public async Task<Project> UpdateProjectAsync(ProjectDTO projectDto)
         {
+            var project = new Project
+            {
+                ProjectName = projectDto.ProjectName,
+                Description = projectDto.Description,
+                Budget = projectDto.Budget,
+                EndDate = projectDto.EndDate,
+                OwnerId = projectDto.OwnerId,
+                StartDate = projectDto.StartDate,
+                Status = projectDto.Status,
+
+            };
             _context.Projects.Update(project);
             await _context.SaveChangesAsync();
             return project;

@@ -1,4 +1,5 @@
-﻿using ProjectManagementApi.IRepositories;
+﻿using ProjectManagementApi.DTO;
+using ProjectManagementApi.IRepositories;
 using ProjectManagementApi.IServices;
 using ProjectManagementApi.Model;
 using ProjectManagementApi.Repositories;
@@ -21,10 +22,10 @@ namespace ProjectManagementApi.Services
         public async Task<Tasks> GetTaskByIdAsync(int id) =>
             await _tasksRepository.GetTaskByIdAsync(id);
 
-        public async Task<Tasks> CreateTaskAsync(Tasks task) =>
+        public async Task<Tasks> CreateTaskAsync(TasksDTO task) =>
             await _tasksRepository.CreateTaskAsync(task);
 
-        public async Task<Tasks> UpdateTaskAsync(Tasks task) =>
+        public async Task<Tasks> UpdateTaskAsync(TasksDTO task) =>
             await _tasksRepository.UpdateTaskAsync(task);
 
         public async Task<bool> DeleteTaskAsync(int id) =>

@@ -1,4 +1,5 @@
-﻿using ProjectManagementApi.Model;
+﻿using ProjectManagementApi.DTO;
+using ProjectManagementApi.Model;
 
 namespace ProjectManagementApi.IServices
 {
@@ -6,8 +7,8 @@ namespace ProjectManagementApi.IServices
     {
         Task<IEnumerable<Tasks>> GetAllTasksAsync();
         Task<Tasks> GetTaskByIdAsync(int id);
-        Task<Tasks> CreateTaskAsync(Tasks task);
-        Task<Tasks> UpdateTaskAsync(Tasks task);
+        Task<Tasks> CreateTaskAsync(TasksDTO task);
+        Task<Tasks> UpdateTaskAsync(TasksDTO task);
         Task<bool> DeleteTaskAsync(int id);
         Task<IEnumerable<Tasks>> GetOverdueTasksAsync();
     }
