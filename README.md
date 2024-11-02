@@ -53,27 +53,27 @@ The backend project follows a clean architecture pattern. Here’s an overview o
 Backend/
 │
 ├── Controllers/
-│   └── <Your Controllers>.cs
+│   
 │
 ├── DTOs/
-│   └── <Your DTOs>.cs
+│   
 │
 ├── Models/
-│   └── <Your Models>.cs
+│   
 │
 ├── Repositories/
-│   ├── I<Your Repository>.cs
+│   ├── IRepository>.cs
 │   └── <Your Repository>.cs
 │
 ├── Services/
-│   ├── I<Your Service>.cs
-│   └── <Your Service>.cs
+│   
+│   
 │
 ├── Data/
-│   └── <Your DbContext>.cs
+│   
 │
 ├── Migrations/
-│   └── <Your Migrations>.cs
+│   
 │
 └── Program.cs
 ```
@@ -97,8 +97,8 @@ Frontend/
 │   ├── components/
 │   │   └── <Your React Components>.jsx
 │   │
-│   ├── services/
-│   │   └── <Your API Services>.js
+│   ├
+│   │  
 │   │
 │   ├── App.js
 │   ├── index.js
@@ -234,4 +234,4 @@ Here are some screenshots of the application:
 6- **swaggar api**
 ![image](https://github.com/user-attachments/assets/b220cf42-6329-40b2-882b-da41387ecf66)
 
-Feel free to replace any placeholder text or links with your actual project details!
+
